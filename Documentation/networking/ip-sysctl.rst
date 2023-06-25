@@ -970,6 +970,13 @@ tcp_tw_reuse - INTEGER
 tcp_window_scaling - BOOLEAN
 	Enable window scaling as defined in RFC1323.
 
+tcp_window_shrink - BOOLEAN
+	This changes how the TCP receive window is calculated when window scaling is in effect.
+	0 - Disabled.	The window is never shrunk.
+	1 - Enabled.	The window is shrunk when necessary to remain within the memory limit set by autotuning (sk_rcvbuf).
+
+	Default: 0
+	
 tcp_wmem - vector of 3 INTEGERs: min, default, max
 	min: Amount of memory reserved for send buffers for TCP sockets.
 	Each TCP socket has rights to use it due to fact of its birth.

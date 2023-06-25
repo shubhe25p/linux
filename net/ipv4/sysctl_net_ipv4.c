@@ -583,6 +583,13 @@ static struct ctl_table ipv4_table[] = {
 
 static struct ctl_table ipv4_net_table[] = {
 	{
+		.procname = "tcp_window_shrink",
+		.data = &init_net.ipv4.sysctl_tcp_window_shrink,
+		.maxlen = sizeof(unsigned int),
+		.mode = 0644,
+		.proc_handler = proc_douintvec_minmax,
+	},
+	{
 		.procname	= "tcp_max_tw_buckets",
 		.data		= &init_net.ipv4.tcp_death_row.sysctl_max_tw_buckets,
 		.maxlen		= sizeof(int),
