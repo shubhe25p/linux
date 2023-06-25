@@ -140,6 +140,7 @@ struct netns_ipv4 {
 	unsigned int sysctl_tcp_notsent_lowat;
 	u8 sysctl_tcp_sack;
 	u8 sysctl_tcp_window_scaling;
+	unsigned int sysctl_tcp_window_shrink;
 	u8 sysctl_tcp_timestamps;
 	u8 sysctl_tcp_early_retrans;
 	u8 sysctl_tcp_recovery;
